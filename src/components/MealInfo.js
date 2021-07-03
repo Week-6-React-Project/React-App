@@ -1,4 +1,5 @@
 import React from "react";
+import MealDetails from './MealDetails';
 
 function MealInfo({ day }) {
   console.log(day);
@@ -6,7 +7,14 @@ function MealInfo({ day }) {
 
   const ShowMeal = () => {
     return meals.map((eachMeal) => {
-      return <h3>Name {eachMeal.title}</h3>;
+      console.log(eachMeal.id)
+      return(
+        <div>
+         <h3>Name {eachMeal.title}</h3>
+         <MealDetails mealId={eachMeal.id}/>
+        </div>
+
+         )
     });
   };
 

@@ -9,19 +9,19 @@ function MealPlan() {
 
   const HandleChange = (e) => {
     setCalories(e.target.value);
-    console.log(calories);
+    // console.log(calories);
   };
 
   const GetMealData = async () => {
     let res = await axios.get(
-      `https://api.spoonacular.com/mealplanner/generate?apiKey=ca057c6f67c2475daf2c9fce38263c5a&timeFrame=week&targetCalories=${calories}`
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=6ad6c6d5a43847b09d5b0df4c5296614&timeFrame=week&targetCalories=${calories}`
     );
-    console.log(res);
+    // console.log(res);
     setMealData(res.data);
   };
 
   const ShowData = () => {
-    console.log("Semra");
+    // console.log("Semra");
     return Object.keys(mealData.week).map((key) => {
       return (
         <div>
