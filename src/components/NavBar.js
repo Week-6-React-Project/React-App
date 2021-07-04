@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function NavBar() {
   return (
     <nav>
@@ -12,6 +13,9 @@ function NavBar() {
       </li>
       <li>
         <Link to="/recipes">Recipes</Link>
+      </li>
+      <li>
+        <Link to="/yoga">Yoga</Link>
       </li>
       <li>
         <a href="#about" />
