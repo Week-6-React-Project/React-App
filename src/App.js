@@ -7,10 +7,7 @@ import Recipes from "./components/Recipes";
 import Team from "./components/Team";
 import About from "./components/About";
 import Yoga from "./components/Yoga";
-import YogaDetails from './components/YogaDetails';
-
-
-
+import YogaDetails from "./components/YogaDetails";
 
 function App() {
   return (
@@ -26,9 +23,18 @@ function App() {
         <Route
           exact
           path="/recipes"
-          render={(props) => <Recipes {...props} />} ></Route>
-          <Route exact path="/yoga" render={(props) => <Yoga {...props} />}></Route>
-          <Route exact path='/yoga/:id' render={(props) => <YogaDetails {...props} />} />
+          render={(props) => <Recipes {...props} />}
+        ></Route>
+        <Route
+          exact
+          path="/yoga"
+          render={(props) => <Yoga {...props} />}
+        ></Route>
+        <Route
+          exact
+          path="/yoga/:id"
+          render={(props) => <YogaDetails {...props} />}
+        />
       </Switch>
     </div>
   );
