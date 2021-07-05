@@ -5,7 +5,7 @@ import YogaVideo from "./YogaVideo";
 
 function YogaDetails(props) {
   const [yogaDetails, setYogaDetails] = useState({});
-  console.log(props);
+ 
 
   useEffect(async () => {
     let res = await axios.get(
@@ -14,7 +14,7 @@ function YogaDetails(props) {
 
     setYogaDetails(res.data);
   }, [props]);
-  //  console.log(yogaDetails.yoga_categories?.map(element=>element))
+
 
   return (
     <div>
@@ -25,7 +25,7 @@ function YogaDetails(props) {
         <img src={yogaDetails.img_url} width="60px" />
 
         {yogaDetails.yoga_categories?.map((element) => {
-          console.log(element);
+        //   console.log(element);
           return (
             <>
               <h4>Category: {element.name} </h4>
