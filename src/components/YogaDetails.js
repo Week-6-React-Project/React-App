@@ -28,8 +28,8 @@ function YogaDetails(props) {
         //   console.log(element);
           return (
             <>
-              <h4>Category: {element.name} </h4>
-              <p>Description: {element.description} </p>
+              <h4> Category: {element.name} </h4>
+              <p> Description: {element.description} </p>
             </>
           );
         })}
