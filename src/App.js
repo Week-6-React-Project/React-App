@@ -8,6 +8,10 @@ import Team from "./components/Team";
 import About from "./components/About";
 import Yoga from "./components/Yoga";
 import YogaDetails from "./components/YogaDetails";
+import "@fontsource/gabriela";
+require('typeface-gabriela');
+
+
 
 function App() {
   return (
