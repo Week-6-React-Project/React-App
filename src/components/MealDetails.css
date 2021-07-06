@@ -1,0 +1,10 @@
+.meal-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal-instructions .instructions-p {
+  padding: 2em;
+  text-align: justify;
+}

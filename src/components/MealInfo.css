@@ -1,0 +1,11 @@
+/* .meal-info {
+  display: flex;
+  flex-direction: column;
+} */
+
+.meal-info ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

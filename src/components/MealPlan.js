@@ -15,19 +15,19 @@ function MealPlan() {
 
   const GetMealData = async () => {
     let res = await axios.get(
-      `https://api.spoonacular.com/mealplanner/generate?apiKey=74655840ee6247938738e3747cddf842&timeFrame=week&targetCalories=${calories}`
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=ea78a6619ab541c4bd2f63c9a56b443f&timeFrame=week&targetCalories=${calories}`
     );
     // console.log(res);
     setMealData(res.data);
   };
 
   const ShowData = () => {
-    // console.log("Semra");
-    return Object.keys(mealData.week).map((key) => {
+    // console.log(mealData);
+    return Object.keys(mealData?.week).map((key) => {
       return (
-        <div>
+        <div className="daily-plan">
           <h2>{key}</h2>
-          <MealInfo day={mealData.week[key]} />
+          <MealInfo day={mealData?.week[key]} />
         </div>
       );
     });
@@ -38,11 +38,14 @@ function MealPlan() {
   }, []);
 
   return (
-    <div className = "meal-plan">
-      <input type="number" placeholder="calories" onChange={HandleChange} />
-      <button onClick={() => setToggle(true)}>
-        {/* {(toggle && "New Search") || "Start Search"} */} Search
-      </button>
+    <div className="meal-plan">
+      <h1>Meal Plan</h1>
+      <div className="search-button">
+        <input type="number" placeholder="calories" onChange={HandleChange} />
+        <button onClick={() => setToggle(true)}>
+          {/* {(toggle && "New Search") || "Start Search"} */} Search
+        </button>
+      </div>
       {toggle && ShowData()}
     </div>
   );

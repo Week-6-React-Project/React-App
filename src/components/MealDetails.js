@@ -1,40 +1,33 @@
-import axios from 'axios';
-import React, {useEffect, useState} from 'react';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "./MealDetails.css";
 
-function MealDetails({mealId}) {
-//   console.log(mealId)
-const[details, setDetails] = useState({});
+function MealDetails({ mealId }) {
+  //   console.log(mealId)
+  const [details, setDetails] = useState({});
 
-const getMealDetails = async () => {
-    let res = await axios.get(`https://api.spoonacular.com/recipes/${mealId}/information?apiKey=74655840ee6247938738e3747cddf842`)
+  const getMealDetails = async () => {
+    let res = await axios.get(
+      `https://api.spoonacular.com/recipes/${mealId}/information?apiKey=ea78a6619ab541c4bd2f63c9a56b443f`
+    );
     setDetails(res.data);
-  
-}
+  };
 
+  useEffect(() => {
+    getMealDetails();
+  }, [mealId]);
 
-useEffect(() => {
-getMealDetails()
-}, [mealId]) 
-
-const showDetails = () => {
+  const showDetails = () => {
     return (
-        <div>
-        <img src={details.image} width="200px"/>
-        <p> {details.instructions} </p>
-        <p> {details.readyInMinutes} </p>
-        </div>
-        
-    )
+      <div className="meal-instructions">
+        <img src={details.image} width="300px" />
+        <p className="instructions-p"> {details.instructions} </p>
+        <p> Ready in: {details.readyInMinutes} minutes </p>
+      </div>
+    );
+  };
+
+  return <div>{showDetails()}</div>;
 }
 
-
-
-    return (
-        <div>
-
-            {showDetails()}
-        </div>
-    )
-}
-
-export default MealDetails
+export default MealDetails;
