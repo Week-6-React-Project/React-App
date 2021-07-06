@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
-@fontsource/gabriela;
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&display=swap");
+@fontsource /gabriela;
 
 .App {
   position: relative;
   display: flex;
   flex-direction: column;
-  
-
+  justify-content: space-between;
+  height: fit-content;
 }

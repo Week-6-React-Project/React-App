@@ -8,15 +8,15 @@ import Team from "./components/Team";
 import About from "./components/About";
 import Yoga from "./components/Yoga";
 import YogaDetails from "./components/YogaDetails";
+
 import "@fontsource/gabriela";
-require('typeface-gabriela');
-
-
+require("typeface-gabriela");
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />}></Route>
         <Route

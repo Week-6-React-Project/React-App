@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import About from "./About";
 import Team from "./Team";
-import "./Home.css"
+import Footer from "./Footer";
+import "./Home.css";
 
 function Home() {
   const [randomQuotes, setRandomQuotes] = useState([]);
@@ -27,13 +28,14 @@ function Home() {
   return (
     <div className="home">
       <header className="quote">
-        <div className = "pic-logo">
-          <img src="../../images/background-new.png"/>
+        <div className="pic-logo">
+          <img src="../../images/background-new.png" />
         </div>
         {showRandomQuote()}
-        </header>
+      </header>
       <About />
       <Team />
+      <Footer />
     </div>
   );
 }

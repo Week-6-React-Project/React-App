@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social-media-logo {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.social-media-logo img {
+  width: 50px;
+  margin-bottom: 10%;
+}
+
+.main-logo {
+  margin-bottom: -3%;
+}
