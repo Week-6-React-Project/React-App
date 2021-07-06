@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-function NavBar({ scrollToAbout, scrollToTeam }) {
+function NavBar({ scrollToAbout, scrollToTeam, scrollToHome }) {
   return (
     <nav>
       <div className="header-logo">
@@ -10,7 +10,7 @@ function NavBar({ scrollToAbout, scrollToTeam }) {
       </div>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link onClick={scrollToHome} to="/">Home</Link>
         </li>
         <li>
           <Link to="/meal-plan">Meal Plan</Link>

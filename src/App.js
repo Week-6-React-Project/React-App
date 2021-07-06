@@ -16,23 +16,23 @@ require("typeface-gabriela");
 function App() {
   const aboutRef = useRef(null);
   const teamRef = useRef(null);
+  const homeRef = useRef(null);
 
-  const scrollToAbout = () =>
-    aboutRef.current.scrollInfoView({ behavior: "smooth", block: "center" });
+  const scrollToAbout = () =>window.scrollTo({top:aboutRef.current.offsetTop, behavior:'smooth'})
+  const scrollToTeam = () =>window.scrollTo({top:teamRef.current.offsetTop, behavior:'smooth'})
+  const scrollToHome = () =>window.scrollTo({top:homeRef.current.offsetTop, behavior:'smooth'})
 
-  const scrollToTeam = () =>
-    teamRef.current.scrollInfoView({ behavior: "smooth", block: "center" });
 
   return (
     <div className="App">
-      <NavBar scrollToAbout={scrollToAbout} scrollToTeam={scrollToTeam} />
+      <NavBar scrollToAbout={scrollToAbout} scrollToTeam={scrollToTeam} scrollToHome={scrollToHome} />
 
       <Switch>
         <Route
           exact
           path="/"
           render={(props) => (
-            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} />
+            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} homeRef={homeRef}/>
           )}
         ></Route>
         <Route

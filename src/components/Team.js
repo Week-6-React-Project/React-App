@@ -2,7 +2,7 @@ import React from "react";
 import "./Team.css";
 
 function Team({ teamRef }) {
-  console.log(teamRef);
+  
   return (
     <section ref={teamRef} className="team">
       <h3>Meet the Team</h3>

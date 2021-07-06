@@ -1,10 +1,16 @@
 import React from "react";
 import "./About.css";
+
+
 function About({ aboutRef }) {
-  console.log(aboutRef);
+
+  
+
+
   return (
-    <div ref={aboutRef}>
-      <section className="about">
+    <div >
+   
+      <section ref={aboutRef} className="about">
         <h3>ABOUT</h3>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting

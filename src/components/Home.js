@@ -5,7 +5,7 @@ import Team from "./Team";
 import Footer from "./Footer";
 import "./Home.css";
 
-function Home({ aboutRef, teamRef }) {
+function Home({ aboutRef, teamRef, homeRef }) {
   const [randomQuotes, setRandomQuotes] = useState([]);
 
   useEffect(async () => {
@@ -26,7 +26,7 @@ function Home({ aboutRef, teamRef }) {
   };
 
   return (
-    <div className="home">
+    <div ref={homeRef} className="home">
       <header className="quote">
         <div className="pic-logo">
           <img src="../../images/background-new.png" />
