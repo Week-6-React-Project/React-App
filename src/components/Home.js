@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import About from "./About";
 import Team from "./Team";
 import Footer from "./Footer";
 import "./Home.css";
 
-function Home() {
+function Home({ aboutRef, teamRef }) {
   const [randomQuotes, setRandomQuotes] = useState([]);
 
   useEffect(async () => {
@@ -33,8 +33,8 @@ function Home() {
         </div>
         {showRandomQuote()}
       </header>
-      <About />
-      <Team />
+      <About aboutRef={aboutRef} />
+      <Team teamRef={teamRef} />
       <Footer />
     </div>
   );

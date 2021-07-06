@@ -1,8 +1,9 @@
 import React from "react";
 import "./About.css";
-function About() {
+function About({ aboutRef }) {
+  console.log(aboutRef);
   return (
-    <>
+    <div ref={aboutRef}>
       <section className="about">
         <h3>ABOUT</h3>
         <p>
@@ -47,7 +48,7 @@ function About() {
         </p>
       </section>
       <div className="about-bottom-image"></div>
-    </>
+    </div>
   );
 }
 

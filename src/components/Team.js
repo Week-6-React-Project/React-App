@@ -1,9 +1,10 @@
 import React from "react";
 import "./Team.css";
 
-function Team() {
+function Team({ teamRef }) {
+  console.log(teamRef);
   return (
-    <section className="team">
+    <section ref={teamRef} className="team">
       <h3>Meet the Team</h3>
       <div className="meet-the-team">
         <div>

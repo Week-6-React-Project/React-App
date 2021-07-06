@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-function NavBar() {
+function NavBar({ scrollToAbout, scrollToTeam }) {
   return (
     <nav>
       <div className="header-logo">
@@ -21,10 +21,10 @@ function NavBar() {
         <li>
           <Link to="/yoga">Yoga</Link>
         </li>
-        <li>
+        <li onClick={scrollToAbout}>
           <Link to="/">About</Link>
         </li>
-        <li>
+        <li onClick={scrollToTeam}>
           <Link to="/">Team</Link>
         </li>
       </ul>

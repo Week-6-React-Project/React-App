@@ -8,17 +8,33 @@ import Team from "./components/Team";
 import About from "./components/About";
 import Yoga from "./components/Yoga";
 import YogaDetails from "./components/YogaDetails";
+import React, { useRef } from "react";
 
 import "@fontsource/gabriela";
 require("typeface-gabriela");
 
 function App() {
+  const aboutRef = useRef(null);
+  const teamRef = useRef(null);
+
+  const scrollToAbout = () =>
+    aboutRef.current.scrollInfoView({ behavior: "smooth", block: "center" });
+
+  const scrollToTeam = () =>
+    teamRef.current.scrollInfoView({ behavior: "smooth", block: "center" });
+
   return (
     <div className="App">
-      <NavBar />
+      <NavBar scrollToAbout={scrollToAbout} scrollToTeam={scrollToTeam} />
 
       <Switch>
-        <Route exact path="/" render={(props) => <Home {...props} />}></Route>
+        <Route
+          exact
+          path="/"
+          render={(props) => (
+            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} />
+          )}
+        ></Route>
         <Route
           exact
           path="/meal-plan"
