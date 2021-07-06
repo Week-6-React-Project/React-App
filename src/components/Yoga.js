@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import "./Yoga.css";
+import YogaDetails from './YogaDetails';
+import { element } from 'prop-types';
+
 
 
 function Yoga() {
-   const [yoga, setYoga] = useState([])
+   const [yoga, setYoga] = useState([]);
+   const [yogaPose, setYogaPose] = useState({});
 
    const getYogaInfo = async () => {
        let res = await axios.get(`https://lightning-yoga-api.herokuapp.com/yoga_poses`);
@@ -20,26 +25,28 @@ function Yoga() {
    const showYogaInfo = () => {
        return yoga.map((element) => {
            return(
-               <div key={element.id}>
-                   <Link className="list-group-item list-group-item-action" to={`/yoga/${element.id}`}>
+               <div className="yoga-poses" key={element.id}>
+                   <img src={element.img_url} width="60px" />
+                   <button onClick={() => setYogaPose(element)} className="list-group-item list-group-item-action">
                    <h2> {element.english_name} </h2>
-                   </Link>
+                   </button>
                    
                </div>
            )
        })
    }
 
-
+//    to={`/yoga/${element.id}`}
     return (
-        <div className="container">
-        <div className="row">
-          <div className="col-5" style={{maxHeight: "90vh", overflow: "scroll"}}>
-            <div className="list-group">
+        <div className="yoga-exercices">
+        
+          <div className="yoga-list">
+            <div>
             {showYogaInfo()} 
             </div>
-            </div>
+
         </div>
+        <YogaDetails id={yogaPose.id}/>
         </div>
     )
 }

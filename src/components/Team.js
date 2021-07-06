@@ -10,7 +10,7 @@ function Team() {
           <img src="../../images/semra.png" />
           <div className="team-info">
             <h4>Semra Mustafova</h4>
-            <p>mustafovasemr@yahoo.com</p>
+            <p>mustafovasemra@yahoo.com</p>
           </div>
         </div>
         <div>

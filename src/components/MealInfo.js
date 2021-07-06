@@ -7,7 +7,7 @@ function MealInfo({ day }) {
 
   const ShowMeal = () => {
     return meals.map((eachMeal) => {
-      console.log(eachMeal.id)
+      console.log(eachMeal)
       return(
         <div>
          <h3>Name {eachMeal.title}</h3>

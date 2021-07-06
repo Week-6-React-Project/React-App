@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 function Instructions({id}) {
+    
  const [recipeDetails, setRecipeDetails] = useState({})
 
 const searchByIngredient = async () => {

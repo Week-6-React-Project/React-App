@@ -6,9 +6,9 @@ function MealDetails({mealId}) {
 const[details, setDetails] = useState({});
 
 const getMealDetails = async () => {
-    let res = await axios.get(`https://api.spoonacular.com/recipes/${mealId}/information?apiKey=6ad6c6d5a43847b09d5b0df4c5296614`)
+    let res = await axios.get(`https://api.spoonacular.com/recipes/${mealId}/information?apiKey=74655840ee6247938738e3747cddf842`)
     setDetails(res.data);
-    console.log(details.image)
+  
 }
 
 
@@ -18,7 +18,12 @@ getMealDetails()
 
 const showDetails = () => {
     return (
+        <div>
         <img src={details.image} width="200px"/>
+        <p> {details.instructions} </p>
+        <p> {details.readyInMinutes} </p>
+        </div>
+        
     )
 }
 
@@ -26,6 +31,7 @@ const showDetails = () => {
 
     return (
         <div>
+
             {showDetails()}
         </div>
     )

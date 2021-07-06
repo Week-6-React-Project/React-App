@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MealInfo from "./MealInfo";
+import "./MealPlan.css";
 
 function MealPlan() {
   const [calories, setCalories] = useState(0);
@@ -14,7 +15,7 @@ function MealPlan() {
 
   const GetMealData = async () => {
     let res = await axios.get(
-      `https://api.spoonacular.com/mealplanner/generate?apiKey=6ad6c6d5a43847b09d5b0df4c5296614&timeFrame=week&targetCalories=${calories}`
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=74655840ee6247938738e3747cddf842&timeFrame=week&targetCalories=${calories}`
     );
     // console.log(res);
     setMealData(res.data);
@@ -37,7 +38,7 @@ function MealPlan() {
   }, []);
 
   return (
-    <div>
+    <div className = "meal-plan">
       <input type="number" placeholder="calories" onChange={HandleChange} />
       <button onClick={() => setToggle(true)}>
         {/* {(toggle && "New Search") || "Start Search"} */} Search

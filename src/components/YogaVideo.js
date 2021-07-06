@@ -7,25 +7,40 @@ function YogaVideo({name}) {
   //  let searchName = name.split(" ").map(each => each.toLowerCase()).join(" ");
 
   const [yogaVideo, setYogaVideo] = useState(null);
-  const [searchName, setSearchName] = useState(name)
+
+console.log(name)
 
 
-
-const videoFromYoutube = async() => {
-  //  setSearchName(name)
-
-  let res = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=how+to+do+${searchName}+yoga+pose&m[…]Search=moderate&key=AIzaSyBuEy6Xh9D49ZqEA5TM-eEIH3OItMiCTDo`
-      );
-      setYogaVideo(res.data.items[0])
+// const videoFromYoutube = async() => {
+//   //  setSearchName(name)
+// if(name){
+//   let res = await axios.get(
+//         `https://www.googleapis.com/youtube/v3/search?part=snippet&q=how+to+do+${name}+yoga+pose&m[…]Search=moderate&key=AIzaSyAlfEYVUpHRPEigzw3E0wof3kri4H7wgBs`
+//       );
+//       setYogaVideo(res.data.items[0])
+// }
+  
   
 
-}
+// }
 
-  useEffect( () => {
-     videoFromYoutube()
-  }, [yogaVideo]);
+  useEffect(async () => {
 
+   // https://iron-cors-anywhere.herokuapp.com
+    if(name){
+      console.log("Find video with name", name)
+      let res = await axios.get(
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&q=how+to+do+${name}+yoga+pose&m[…]Search=moderate&key=AIzaSyBibnOWEr72nhfg0dEPgv5Amv09pXcRk_M`
+        
+            
+          );
+          console.log(res)
+          setYogaVideo(res.data.items[0])
+    }
+
+    
+  }, [name]);
+  //console.log(yogaVideo)
  const showVideo = () => {
   return (
     <div>

@@ -1,0 +1,18 @@
+.yoga-exercices{
+    display:flex;
+    font-family: 'Gabriela', serif;
+    margin-top:71px;
+   
+}
+
+.yoga-list{
+    max-height: 94vh;
+    overflow: scroll;
+    width:35vw;
+}
+
+.yoga-poses{
+    display:flex;
+
+}
+

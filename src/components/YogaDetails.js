@@ -2,23 +2,27 @@ import React, { useState, useEffect } from "react";
 import { Switch, Link, Route } from "react-router-dom";
 import axios from "axios";
 import YogaVideo from "./YogaVideo";
+import "./YogaDetails.css";
 
-function YogaDetails(props) {
+
+function YogaDetails({id}) {
   const [yogaDetails, setYogaDetails] = useState({});
  
 
   useEffect(async () => {
-    let res = await axios.get(
-      `https://lightning-yoga-api.herokuapp.com/yoga_poses/${props.match.params.id}`
+    if(id){
+       let res = await axios.get(
+      `https://lightning-yoga-api.herokuapp.com/yoga_poses/${id}`
     );
-
     setYogaDetails(res.data);
-  }, [props]);
+    }
+  }, [id]);
 
 
   return (
-    <div>
-      <div className="col-7">
+  
+
+      <div className="yoga-details">
         <h1>English name: {yogaDetails.english_name} </h1>
 
         <h3>Sanskrit name: {yogaDetails.sanskrit_name} </h3>
@@ -35,7 +39,7 @@ function YogaDetails(props) {
         })}
         <YogaVideo name={yogaDetails.english_name} />
       </div>
-    </div>
+  
   );
 }
 
