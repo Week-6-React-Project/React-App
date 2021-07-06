@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./About.css";
 
 
 function About({ aboutRef }) {
 
-  
+  // const [randomQuote, setRandomQuote] = useState({});
 
+  const [offSetY, setOffSetY] = useState(0);
+ 
+  const handleScrollUp = () => {
+    setOffSetY(window.pageYOffset);
+    
+  };
+
+
+  useEffect( () => {
+  window.addEventListener("scroll", handleScrollUp)
+  return() => window.removeEventListener("scroll", handleScrollUp)
+  }, [])
 
   return (
     <div >

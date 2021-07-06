@@ -5,6 +5,8 @@
   background: linear-gradient(rgb(95, 158, 160), rgb(255, 255, 255));
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  position: relative;
+  z-index: 3;
 }
 
 h3 {
