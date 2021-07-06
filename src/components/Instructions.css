@@ -1,0 +1,17 @@
+.ingredient {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ingredient ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.ingredient .instructions {
+  text-align: justify;
+}
