@@ -3,10 +3,13 @@ import axios from "axios";
 import MealInfo from "./MealInfo";
 import "./MealPlan.css";
 
-function MealPlan() {
+function MealPlan({ aboutRef, teamRe, homeRef }) {
   const [calories, setCalories] = useState(0);
   const [mealData, setMealData] = useState(null);
   const [toggle, setToggle] = useState(false);
+
+console.log(homeRef)
+
 
   const HandleChange = (e) => {
     setCalories(e.target.value);

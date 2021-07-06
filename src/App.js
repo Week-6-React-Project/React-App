@@ -14,13 +14,40 @@ import "@fontsource/gabriela";
 require("typeface-gabriela");
 
 function App() {
+
   const aboutRef = useRef(null);
   const teamRef = useRef(null);
   const homeRef = useRef(null);
 
-  const scrollToAbout = () =>window.scrollTo({top:aboutRef.current.offsetTop, behavior:'smooth'})
-  const scrollToTeam = () =>window.scrollTo({top:teamRef.current.offsetTop, behavior:'smooth'})
-  const scrollToHome = () =>window.scrollTo({top:homeRef.current.offsetTop, behavior:'smooth'})
+  const scrollToAbout = () => {
+    if(aboutRef.current !== null){
+      window.scrollTo({top:aboutRef.current.offsetTop, behavior:'smooth'})
+    }else{
+      return <About/>
+    }
+     
+  }
+
+
+
+
+  const scrollToTeam = () => {
+    if(teamRef.current !== null){
+      window.scrollTo({top:teamRef.current.offsetTop, behavior:'smooth'})
+  } else{
+    return <Team/>
+  }
+}
+
+
+  const scrollToHome = () =>{
+    if(homeRef.current !== null){
+       window.scrollTo({top:homeRef.current.offsetTop, behavior:'smooth'})
+    }else{
+      return <Home/>
+    }
+   
+  }
 
 
   return (
@@ -38,7 +65,7 @@ function App() {
         <Route
           exact
           path="/meal-plan"
-          render={(props) => <MealPlan {...props} />}
+          render={(props) => <MealPlan aboutRef={aboutRef} teamRef={teamRef} {...props} homeRef={homeRef} {...props} />}
         ></Route>
         <Route
           exact
