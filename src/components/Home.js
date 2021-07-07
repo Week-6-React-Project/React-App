@@ -5,14 +5,14 @@ import Team from "./Team";
 import Footer from "./Footer";
 import "./Home.css";
 
-function Home({ aboutRef, teamRef, homeRef }) {
+function Home({ aboutRef, teamRef, homeRef, offSetY }) {
   const [randomQuote, setRandomQuote] = useState({});
 
- const [offSetY, setOffSetY] = useState(0);
+//  const [offSetY, setOffSetY] = useState(0);
 
- const handleScrollUp = () => {
-     setOffSetY(window.pageYOffset);
- };
+//  const handleScrollUp = () => {
+//      setOffSetY(window.pageYOffset);
+//  };
 
 
 //PARALAX HOME SCREEN
@@ -34,9 +34,9 @@ function Home({ aboutRef, teamRef, homeRef }) {
 
     //PARALAX EFFECT HOME SCREENif
 
-       window.addEventListener("scroll", handleScrollUp)
+    //    window.addEventListener("scroll", handleScrollUp)
     
-    return() => window.removeEventListener("scroll", handleScrollUp)
+    // return() => window.removeEventListener("scroll", handleScrollUp)
   }, []);
 
 
@@ -57,13 +57,13 @@ function Home({ aboutRef, teamRef, homeRef }) {
 
   return (
     <div ref={homeRef} className="home">
-      <header className="quote"    style={{transform:`translateY(${offSetY*1.6}px)`, display: offSetY>700 ? 'none' : 'flex'}}>
+      <header className="quote" style={{transform:`translateY(${offSetY*1.6}px)`}}>
         <div className="pic-logo">
           <img src="../../images/background-new.png" />
         </div>
         {showRandomQuote()}
       </header>
-      <About aboutRef={aboutRef} offSetY={offSetY} handleScrollUp={handleScrollUp}/>
+      <About aboutRef={aboutRef} offSetY={offSetY} />
       <Team teamRef={teamRef} />
       <Footer />
     </div>

@@ -8,7 +8,7 @@ import Team from "./components/Team";
 import About from "./components/About";
 import Yoga from "./components/Yoga";
 import YogaDetails from "./components/YogaDetails";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { ParallaxProvider } from 'react-scroll-parallax';
 import AddRecipes from "./components/AddRecipes";
 
@@ -18,13 +18,22 @@ import "@fontsource/gabriela";
 require("typeface-gabriela");
 
 function App() {
+  const [offSetY, setOffSetY] = useState(0);
+
+  const handleScrollUp = () => {
+      setOffSetY(window.pageYOffset);
+      console.log(offSetY)
+  };
+
 
   const aboutRef = useRef(null);
   const teamRef = useRef(null);
   const homeRef = useRef(null);
 
-
-
+ useEffect( () => {
+  window.addEventListener("scroll", handleScrollUp)
+  return() => window.removeEventListener("scroll", handleScrollUp)
+  }, [])
 
 
   const scrollToAbout = () => {
@@ -67,7 +76,7 @@ function App() {
           exact
           path="/"
           render={(props) => (
-            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} homeRef={homeRef}/>
+            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} homeRef={homeRef} offSetY={offSetY}/>
           )}
         ></Route>
         <Route

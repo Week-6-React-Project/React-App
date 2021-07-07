@@ -19,6 +19,7 @@ h3 {
 
 p {
   text-align: center;
+  line-height: 2em;
 }
 
 .circle-img {
@@ -26,6 +27,8 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 35vw;
+  min-width: 300px;
 }
 
 .circle-img img {
@@ -44,21 +47,22 @@ p {
 }
 
 #text {
-  color: rgb(95, 158, 160);
+  color: rgb(53, 90, 92);
 }
 .about-bottom-image {
   background-image: linear-gradient(
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 0.3)
     ),
-    url(./header-pic2.jpg);
+    url(./picture33.jpg);
   background-size: cover;
   background-position: bottom;
-  height: 80vh;
+  height: 70vh;
   position: relative;
   background-attachment: fixed;
   width: 100vw;
   z-index: -10;
+  transform: translateY(100px);
   /* top: -300px; */
 }
 

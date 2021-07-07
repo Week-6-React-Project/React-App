@@ -64,7 +64,7 @@ function About({ aboutRef, handleScrollUp, offSetY }) {
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
-        </p>  <div className="about-bottom-image" style={{transform:`translateY(${offSetY*0.4}px)`}}></div>
+        </p>  <div className="about-bottom-image"></div>
       </section>
     
     </div>

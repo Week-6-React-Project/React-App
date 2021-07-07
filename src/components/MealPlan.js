@@ -26,7 +26,8 @@ console.log(homeRef)
 
   const ShowData = () => {
     // console.log(mealData);
-    return Object.keys(mealData?.week).map((key) => {
+    if(mealData){
+         return Object.keys(mealData?.week).map((key) => {
       return (
         <div className="daily-plan">
           <h2>{key}</h2>
@@ -34,6 +35,12 @@ console.log(homeRef)
         </div>
       );
     });
+    }else{
+      return (
+        <p>Loading ...</p>
+      )
+    }
+ 
   };
 
   useEffect(() => {

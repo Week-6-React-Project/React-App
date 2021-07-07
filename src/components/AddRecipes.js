@@ -4,7 +4,7 @@ import "./AddRecipes.css";
 import { useHistory } from "react-router-dom";
 
 function AddRecipes(props) {
-  console.log(props);
+
   const [title, setTitle] = useState("");
   const [instructions, setInstructions] = useState("");
   const [image, setImage] = useState("");
@@ -42,11 +42,27 @@ function AddRecipes(props) {
   useEffect(async () => {
     let res = await axios.get(`https://ironrest.herokuapp.com/NutriYoga`);
     setAllRecipes(res.data);
-    showRecipes();
-    console.log(res.data);
+
   }, []);
 
+  
+
+
+const deleteRecipe = async (id, i) => {
+    let res = await axios.delete(
+      `https://ironrest.herokuapp.com/NutriYoga/${id}`
+    );
+    const upDatedRecipes = [...allRecipes].splice(i, 1)
+    setAllRecipes(upDatedRecipes);
+    showRecipes()
+
+ 
+    
+  };
+
+
   const showRecipes = () => {
+    console.log(allRecipes)
     return allRecipes.map((eachRecipe, i) => {
       return (
         <div className="show-recipe">
@@ -63,19 +79,11 @@ function AddRecipes(props) {
     });
   };
 
-  const deleteRecipe = async (id, i) => {
-    let res = await axios.delete(
-      `https://ironrest.herokuapp.com/NutriYoga/${id}`
-    );
-    const upDatedRecipes = [...allRecipes].splice(i, 1)
-    setAllRecipes(upDatedRecipes);
-    props.history.push("/")
-    
-  };
+  
 
   return (
     <div className="add-recipes">
-      <h1>Add recipe</h1>
+      <h1>Add Recipe</h1>
 
       <div className="main-recipes">
         <div>
@@ -93,7 +101,7 @@ function AddRecipes(props) {
             <input onChange={handleChange} type="text" name="author" />
             <br></br>
             <br></br>
-            <button type="submit">Submit</button>
+            <button type="submit">Add Recipe</button>
           </form>
         </div>
         <h1>New Recipe</h1>
