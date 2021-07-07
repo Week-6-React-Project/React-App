@@ -9,6 +9,9 @@ import About from "./components/About";
 import Yoga from "./components/Yoga";
 import YogaDetails from "./components/YogaDetails";
 import React, { useRef } from "react";
+import { ParallaxProvider } from 'react-scroll-parallax';
+
+
 
 import "@fontsource/gabriela";
 require("typeface-gabriela");
@@ -18,6 +21,10 @@ function App() {
   const aboutRef = useRef(null);
   const teamRef = useRef(null);
   const homeRef = useRef(null);
+
+
+
+
 
   const scrollToAbout = () => {
     if(aboutRef.current !== null){

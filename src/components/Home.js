@@ -11,8 +11,7 @@ function Home({ aboutRef, teamRef, homeRef }) {
  const [offSetY, setOffSetY] = useState(0);
 
  const handleScrollUp = () => {
-   setOffSetY(window.pageYOffset);
-   //console.log(offSetY)
+     setOffSetY(window.pageYOffset);
  };
 
 
@@ -33,8 +32,10 @@ function Home({ aboutRef, teamRef, homeRef }) {
   
     setRandomQuote(quote);
 
-    //PARALAX EFFECT HOME SCREEN
-     window.addEventListener("scroll", handleScrollUp)
+    //PARALAX EFFECT HOME SCREENif
+
+       window.addEventListener("scroll", handleScrollUp)
+    
     return() => window.removeEventListener("scroll", handleScrollUp)
   }, []);
 
@@ -47,19 +48,22 @@ function Home({ aboutRef, teamRef, homeRef }) {
       <div className="quote-text">
         <h2>{randomQuote?.text}</h2>
         <p>{randomQuote?.author}</p>
+        
       </div>
     );
   };
 
+  // <div style={{ visibility: this.state.driverDetails.firstName != undefined? 'visible': 'hidden'}}></div>
+
   return (
     <div ref={homeRef} className="home">
-      <header className="quote" style={{transform:`translateY(-${offSetY*0.3}px)`}}>
+      <header className="quote"    style={{transform:`translateY(${offSetY*1.6}px)`, display: offSetY>700 ? 'none' : 'flex'}}>
         <div className="pic-logo">
           <img src="../../images/background-new.png" />
         </div>
         {showRandomQuote()}
       </header>
-      <About aboutRef={aboutRef}  />
+      <About aboutRef={aboutRef} offSetY={offSetY} handleScrollUp={handleScrollUp}/>
       <Team teamRef={teamRef} />
       <Footer />
     </div>

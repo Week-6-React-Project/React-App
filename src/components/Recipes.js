@@ -6,6 +6,7 @@ import "./Recipes.css";
 function Recipes() {
   const [foodByIngredient, setFoodByIngredient] = useState([]);
   const [name, setName] = useState("");
+  
 
   const searchByIngredient = async (e) => {
     e.preventDefault();
@@ -17,6 +18,10 @@ function Recipes() {
     setFoodByIngredient(res.data);
     setName("");
   };
+  
+ 
+
+
 
   const showFoodByIngredients = () => {
     return foodByIngredient.map((eachFood) => {
@@ -47,6 +52,7 @@ function Recipes() {
         </label>
 
         <button onClick={(e) => searchByIngredient(e)}>Search</button>
+        
       </div>
 
       {showFoodByIngredients()}

@@ -1,27 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
+import { ParallaxProvider } from 'react-scroll-parallax';
 import "./About.css";
 
 
-function About({ aboutRef }) {
+function About({ aboutRef, handleScrollUp, offSetY }) {
 
   // const [randomQuote, setRandomQuote] = useState({});
 
-  const [offSetY, setOffSetY] = useState(0);
+  // const [offSetY, setOffSetY] = useState();
  
-  const handleScrollUp = () => {
-    setOffSetY(window.pageYOffset);
+  // const handleScrollUp = () => {
+  //   setOffSetY(window.pageYOffset);
     
-  };
+  // };
 
 
-  useEffect( () => {
-  window.addEventListener("scroll", handleScrollUp)
-  return() => window.removeEventListener("scroll", handleScrollUp)
-  }, [])
+  // useEffect( () => {
+  // window.addEventListener("scroll", handleScrollUp)
+  // return() => window.removeEventListener("scroll", handleScrollUp)
+  // }, [])
 
   return (
     <div >
-   
+ 
       <section ref={aboutRef} className="about">
         <h3>ABOUT</h3>
         <p>
@@ -63,11 +64,13 @@ function About({ aboutRef }) {
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
-        </p>
+        </p>  <div className="about-bottom-image" style={{transform:`translateY(${offSetY*0.4}px)`}}></div>
       </section>
-      <div className="about-bottom-image"></div>
+    
     </div>
   );
 }
+
+  // <div style={{ visibility: this.state.driverDetails.firstName != undefined? 'visible': 'hidden'}}></div>
 
 export default About;

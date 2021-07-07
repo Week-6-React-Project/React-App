@@ -7,6 +7,10 @@
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h3 {
@@ -20,7 +24,7 @@ p {
 .circle-img {
   margin: 5em;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -32,7 +36,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .circle-img div h4 {
@@ -43,11 +47,36 @@ p {
   color: rgb(95, 158, 160);
 }
 .about-bottom-image {
-  background-image: url(./header-pic2.jpg);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(./header-pic2.jpg);
   background-size: cover;
   background-position: bottom;
-  height: 60vh;
-  transform: translateY(-100%);
+  height: 80vh;
   position: relative;
-  z-index: -1;
+  background-attachment: fixed;
+  width: 100vw;
+  z-index: -10;
+  /* top: -300px; */
 }
+
+@media (max-width: 1200px) {
+  .about-bottom-image {
+    height: 40vh;
+    top: -100px;
+  }
+}
+
+/* @media (max-width: 700px) {
+  .about-bottom-image {
+    top: -50vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-bottom-image {
+    top: -50vh;
+  }
+} */

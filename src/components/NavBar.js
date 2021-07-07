@@ -6,7 +6,11 @@ function NavBar({ scrollToAbout, scrollToTeam, scrollToHome }) {
   return (
     <nav>
       <div className="header-logo">
+        <Link to="/">
         <img src="../../images/navbar-new2.png" />
+        </Link>
+       
+
       </div>
       <ul>
         <li>
