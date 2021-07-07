@@ -11,6 +11,13 @@ function AddRecipes(props) {
   const [author, setAuthor] = useState("");
   const [allRecipes, setAllRecipes] = useState([]);
 
+ useEffect(async () => {
+    let res = await axios.get(`https://ironrest.herokuapp.com/NutriYoga`);
+    setAllRecipes(res.data);
+
+  }, []);
+
+  
   const handleChange = (e) => {
     if (e.target.name === "title") {
       setTitle(e.target.value);
@@ -36,14 +43,12 @@ function AddRecipes(props) {
       "https://ironrest.herokuapp.com/NutriYoga",
       newRecipe
     );
-    //console.log(res)
+ 
+    let res2 = await axios.get(`https://ironrest.herokuapp.com/NutriYoga`);
+    setAllRecipes(res2.data);
   };
 
-  useEffect(async () => {
-    let res = await axios.get(`https://ironrest.herokuapp.com/NutriYoga`);
-    setAllRecipes(res.data);
-
-  }, []);
+ 
 
   
 
@@ -52,17 +57,14 @@ const deleteRecipe = async (id, i) => {
     let res = await axios.delete(
       `https://ironrest.herokuapp.com/NutriYoga/${id}`
     );
-    const upDatedRecipes = [...allRecipes].splice(i, 1)
-    setAllRecipes(upDatedRecipes);
-    showRecipes()
 
- 
-    
+    let res2 = await axios.get(`https://ironrest.herokuapp.com/NutriYoga`);
+    setAllRecipes(res2.data);
+  
   };
 
 
   const showRecipes = () => {
-    console.log(allRecipes)
     return allRecipes.map((eachRecipe, i) => {
       return (
         <div className="show-recipe">
