@@ -47,7 +47,7 @@ function AddRecipes(props) {
   }, []);
 
   const showRecipes = () => {
-    return allRecipes.map((eachRecipe) => {
+    return allRecipes.map((eachRecipe, i) => {
       return (
         <div className="show-recipe">
           <h3> {eachRecipe.title} </h3>
@@ -57,16 +57,20 @@ function AddRecipes(props) {
           </div>
 
           <p> {eachRecipe.instructions} </p>
-          <button onClick={() => deleteRecipe(eachRecipe._id)}>DELETE</button>
+          <button onClick={() => deleteRecipe(eachRecipe._id, i)}>DELETE</button>
         </div>
       );
     });
   };
 
-  const deleteRecipe = async (id) => {
+  const deleteRecipe = async (id, i) => {
     let res = await axios.delete(
       `https://ironrest.herokuapp.com/NutriYoga/${id}`
     );
+    const upDatedRecipes = [...allRecipes].splice(i, 1)
+    setAllRecipes(upDatedRecipes);
+    props.history.push("/")
+    
   };
 
   return (
