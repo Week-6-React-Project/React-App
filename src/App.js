@@ -10,6 +10,7 @@ import Yoga from "./components/Yoga";
 import YogaDetails from "./components/YogaDetails";
 import React, { useRef } from "react";
 import { ParallaxProvider } from 'react-scroll-parallax';
+import AddRecipes from "./components/AddRecipes";
 
 
 
@@ -78,6 +79,11 @@ function App() {
           exact
           path="/recipes"
           render={(props) => <Recipes {...props} />}
+        ></Route>
+         <Route
+          exact
+          path="/addrecipe"
+          render={(props) => <AddRecipes {...props} />}
         ></Route>
         <Route
           exact

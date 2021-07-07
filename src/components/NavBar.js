@@ -23,6 +23,9 @@ function NavBar({ scrollToAbout, scrollToTeam, scrollToHome }) {
           <Link to="/recipes">Recipes</Link>
         </li>
         <li>
+          <Link to="/addrecipe"> Add Recipe</Link>
+        </li>
+        <li>
           <Link to="/yoga">Yoga</Link>
         </li>
         <li onClick={scrollToAbout}>
