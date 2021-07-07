@@ -94,7 +94,7 @@ const deleteRecipe = async (id, i) => {
             <input onChange={handleChange} type="text" name="title" />
             <br></br>
             <label>Instructions: </label>
-            <input onChange={handleChange} type="text" name="instructions" />
+            <textarea onChange={handleChange} type="text" name="instructions" rows="5" cols="20"/>
             <br></br>
             <label>Image: </label>
             <input onChange={handleChange} type="text" name="image" />
