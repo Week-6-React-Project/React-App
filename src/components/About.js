@@ -64,7 +64,14 @@ function About({ aboutRef, handleScrollUp, offSetY }) {
           and practicing yoga can help you maximize your overall health benefits
           in these areas.
         </p>{" "}
-        <div className="about-bottom-image"></div>
+        <div className="about-bottom-image">
+         <h3>
+         ”Your body exists in the past and your mind exists in the future. In yoga, they come together in the present.” 
+         <br/>― B.K.S.Iyengar<br/>
+         </h3>
+
+
+        </div>
       </section>
     </div>
   );
