@@ -33,13 +33,22 @@ header {
     0 0 5px rgb(46, 182, 189);
   text-align: center;
   color: rgba(88, 83, 83, 0.9);
+  animation: appear 12s linear infinite both;
 }
 
-.quote-text h2 p {
-  animation: shake2 5s linear forwards;
-}
-
-@keyframes shake2 {
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1200px) {

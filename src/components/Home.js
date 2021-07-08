@@ -28,6 +28,7 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
    
     let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
    setRandomQuote(quote);
+   
     setInterval(() => {
    let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
    setRandomQuote(quote);
@@ -40,6 +41,7 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
 
     return (
       <div className="quote-text">
+  
         <h2>"{randomQuote?.text}"</h2>
         <p style={{fontStyle:"italic"}}>{randomQuote?.author}</p>
         
