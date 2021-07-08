@@ -16,10 +16,18 @@
 }
 
 .yoga-poses button {
+  background-color: rgb(240, 235, 235);
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 800;
+  overflow: hidden;
+  transition: all 0.2s linear 0.2s;
 }
 
 .yoga-poses button:hover {
-  color: rgb(255, 255, 255);
+  color: rgb(252, 248, 248);
   background: none;
   background-color: rgb(174, 211, 211);
+  background-position: 0 100%;
 }

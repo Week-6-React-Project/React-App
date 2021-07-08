@@ -38,6 +38,7 @@ nav a:hover {
 
 .header-logo {
   width: 15%;
+  min-width: 170px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -45,4 +46,32 @@ nav a:hover {
 
 .header-logo img {
   width: 80%;
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .big-screen {
+    position: absolute;
+    height: 45vh;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 70px;
+    background-color: rgba(240, 235, 235, 0.7);
+    right: -10px;
+    max-width: 200px;
+  }
 }
