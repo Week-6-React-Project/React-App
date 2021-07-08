@@ -103,6 +103,7 @@ function App() {
           render={(props) => <YogaDetails {...props} />}
         />
       </Switch>
+      
     </div>
   );
 }

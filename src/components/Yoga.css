@@ -1,18 +1,25 @@
-.yoga-exercices{
-    display:flex;
-    font-family: 'Gabriela', serif;
-    margin-top:71px;
-   
+.yoga-exercices {
+  display: flex;
+  font-family: "Gabriela", serif;
+  margin-top: 71px;
+  background-color: rgb(174, 211, 211);
 }
 
-.yoga-list{
-    max-height: 94vh;
-    overflow: scroll;
-    width:35vw;
+.yoga-list {
+  max-height: 94vh;
+  overflow: scroll;
+  width: 35vw;
 }
 
-.yoga-poses{
-    display:flex;
-
+.yoga-poses {
+  display: flex;
 }
 
+.yoga-poses button {
+}
+
+.yoga-poses button:hover {
+  color: rgb(255, 255, 255);
+  background: none;
+  background-color: rgb(174, 211, 211);
+}

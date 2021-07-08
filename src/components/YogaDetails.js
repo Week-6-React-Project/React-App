@@ -6,7 +6,7 @@ import "./YogaDetails.css";
 
 
 function YogaDetails({id}) {
-  const [yogaDetails, setYogaDetails] = useState({});
+  const [yogaDetails, setYogaDetails] = useState(null);
  
 
   useEffect(async () => {
@@ -20,9 +20,10 @@ function YogaDetails({id}) {
 
 
   return (
-  
-
-      <div className="yoga-details">
+    <div className="yoga-details">
+   {yogaDetails && 
+         
+      <>
         <h1>English name: {yogaDetails.english_name} </h1>
 
         <h3>Sanskrit name: {yogaDetails.sanskrit_name} </h3>
@@ -37,8 +38,13 @@ function YogaDetails({id}) {
             </>
           );
         })}
-        <YogaVideo name={yogaDetails.english_name} />
-      </div>
+        {/* <YogaVideo name={yogaDetails.english_name} /> */}
+        </>
+    
+      || <h1>Select a yoga pose</h1>
+        }
+
+     </div>
   
   );
 }

@@ -26,6 +26,8 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
   useEffect(async () => {
     let res = await axios.get(`https://type.fit/api/quotes`);
    
+    let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
+   setRandomQuote(quote);
     setInterval(() => {
    let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
    setRandomQuote(quote);
@@ -39,8 +41,8 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
 
     return (
       <div className="quote-text">
-        <h2>{randomQuote?.text}</h2>
-        <p>{randomQuote?.author}</p>
+        <h2>"{randomQuote?.text}"</h2>
+        <p style={{fontStyle:"italic"}}>{randomQuote?.author}</p>
         
       </div>
     );
@@ -50,7 +52,7 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
 
   return (
     <div ref={homeRef} className="home">
-      <header className="quote" style={{transform:`translateY(${offSetY}px)`}}>
+      <header className="quote" style={{transform:`translateY(${Math.min(offSetY*1.6, 1000) }px)`}}>
         <div className="pic-logo">
           <img src="../../images/background-new.png" />
         </div>
