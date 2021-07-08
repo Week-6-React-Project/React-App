@@ -18,7 +18,7 @@ import "@fontsource/gabriela";
 require("typeface-gabriela");
 
 function App() {
-  const [offSetY, setOffSetY] = useState(0);
+  const [offSetY, setOffSetY] = useState(0); // PARALAX
 
   const handleScrollUp = () => {
       setOffSetY(window.pageYOffset);

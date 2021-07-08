@@ -50,7 +50,7 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
 
   return (
     <div ref={homeRef} className="home">
-      <header className="quote" style={{transform:`translateY(${offSetY*1.6}px)`}}>
+      <header className="quote" style={{transform:`translateY(${offSetY}px)`}}>
         <div className="pic-logo">
           <img src="../../images/background-new.png" />
         </div>

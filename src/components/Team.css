@@ -48,3 +48,8 @@
 .meet-the-team div img {
   width: 220px;
 }
+
+.meet-the-team a {
+  text-decoration: none;
+  color: rgb(53, 90, 92);
+}

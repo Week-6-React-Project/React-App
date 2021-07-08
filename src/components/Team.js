@@ -10,14 +10,30 @@ function Team({ teamRef }) {
           <img src="../../images/semra.png" />
           <div className="team-info">
             <h4>Semra Mustafova</h4>
-            <p>mustafovasemra@yahoo.com</p>
+            <a href="mailto: mustafovasemra@yahoo.com">
+            E-mail
+            </a>
+            <a href="https://www.linkedin.com/in/semra-mustafova/">
+            LinkedIn
+            </a>
+            <a href="https://github.com/MustafovaSemra">
+            GitHub
+            </a>
           </div>
         </div>
         <div>
           <img src="../../images/voja.png" />
           <div className="team-info">
             <h4>Vojislav Zaja</h4>
-            <p>vojislavzaja@gmail.com</p>
+            <a href="mailto: vojislavzaja@gmail.com">
+            E-mail
+            </a>
+            <a href="https://www.linkedin.com/in/vojislav-zaja/">
+            LinkedIn
+            </a>
+            <a href="https://github.com/vojaso82">
+            GitHub
+            </a>
           </div>
         </div>
       </div>
