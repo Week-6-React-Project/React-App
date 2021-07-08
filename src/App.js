@@ -26,9 +26,9 @@ function App() {
   };
 
 
-  const aboutRef = useRef(null);
-  const teamRef = useRef(null);
-  const homeRef = useRef(null);
+  const aboutRef = useRef(null); //SCROLL TO ABOUT
+  const teamRef = useRef(null); //SCROLL TO TEAM
+  const homeRef = useRef(null); //SCROLL TO HOME
 
  useEffect( () => {
   window.addEventListener("scroll", handleScrollUp)
@@ -44,8 +44,6 @@ function App() {
     }
      
   }
-
-
 
 
   const scrollToTeam = () => {

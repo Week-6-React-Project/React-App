@@ -30,7 +30,7 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
    let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
    setRandomQuote(quote);
    //console.log(quote)
-    }, 9000)
+    }, 12000)
   }, []);
 
   
