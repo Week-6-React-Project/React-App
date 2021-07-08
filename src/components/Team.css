@@ -53,3 +53,26 @@
   text-decoration: none;
   color: rgb(53, 90, 92);
 }
+
+@media (max-width: 1000px) {
+  .meet-the-team {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+  }
+  .meet-the-team div img {
+    width: 150px;
+  }
+
+  .team {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .meet-the-team div {
+    margin-bottom: 20px;
+  }
+  .team h3 {
+    margin-top: -120px;
+  }
+}

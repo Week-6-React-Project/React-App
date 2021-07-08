@@ -29,7 +29,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 35vw;
-  min-width: 400px;
+  min-width: 450px;
 }
 
 .circle-img img {
@@ -67,10 +67,19 @@ p {
   /* top: -300px; */
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .about-bottom-image {
     height: 40vh;
     top: -100px;
+  }
+  .circle-img div {
+    padding: 0 5px;
+  }
+
+  .circle-img {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
   }
 }
 

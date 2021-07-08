@@ -20,10 +20,10 @@ header {
 
 .pic-logo {
   width: 30%;
+  min-width: 250px;
 }
 
 .pic-logo img {
-  min-width: 250px;
   width: 100%;
 }
 
