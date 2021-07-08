@@ -2,10 +2,9 @@ import React from "react";
 import "./Team.css";
 
 function Team({ teamRef }) {
-  
   return (
     <section ref={teamRef} className="team">
-      <h3>Meet the Team</h3>
+      <h3>MEET THE TEAM</h3>
       <div className="meet-the-team">
         <div>
           <img src="../../images/semra.png" />
