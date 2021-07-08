@@ -31,7 +31,6 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
     setInterval(() => {
    let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
    setRandomQuote(quote);
-   //console.log(quote)
     }, 12000)
   }, []);
 
