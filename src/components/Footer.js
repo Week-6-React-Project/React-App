@@ -9,9 +9,13 @@ function Footer() {
       <div className="main-logo">
         <img src="../../images/main-logo.png" />
       </div>
-      <div className="social-media-logo">   
-        <img src="../../images/instagram.png" />
-        <img src="../../images/facebook.png" />
+      <div className="social-media-logo">
+        <a href="https://www.instagram.com/">
+          <img src="../../images/instagram.png" />
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="../../images/facebook.png" />
+        </a>
       </div>
 
       {/* <FontAwesomeIcon icon={faFacebookF} /> */}
