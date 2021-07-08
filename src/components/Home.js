@@ -7,7 +7,7 @@ import "./Home.css";
 
 function Home({ aboutRef, teamRef, homeRef, offSetY }) {
   const [randomQuote, setRandomQuote] = useState({});
-
+  
 //  const [offSetY, setOffSetY] = useState(0);
 
 //  const handleScrollUp = () => {
@@ -23,25 +23,18 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
 
 // }, []);
 
-
-
   useEffect(async () => {
     let res = await axios.get(`https://type.fit/api/quotes`);
    
-    let quote = res.data[Math.floor(Math.random() * res.data.length)];
-  
-    setRandomQuote(quote);
-
-    //PARALAX EFFECT HOME SCREENif
-
-    //    window.addEventListener("scroll", handleScrollUp)
-    
-    // return() => window.removeEventListener("scroll", handleScrollUp)
+    setInterval(() => {
+   let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
+   setRandomQuote(quote);
+   //console.log(quote)
+    }, 9000)
   }, []);
 
-
-
-
+  
+    
   const showRandomQuote = () => {
 
     return (
