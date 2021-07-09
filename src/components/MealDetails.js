@@ -22,7 +22,7 @@ function MealDetails({ mealId }) {
       <div className="meal-instructions">
         <img src={details.image} width="300px" />
         <p className="instructions-p"> {details.instructions} </p>
-        <p> Ready in: {details.readyInMinutes} minutes </p>
+        <p>Ready in: {details.readyInMinutes} minutes </p>
       </div>
     );
   };
