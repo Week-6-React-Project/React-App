@@ -33,8 +33,8 @@ function YogaDetails({id}) {
         //   console.log(element);
           return (
             <>
-              <h4> Category: {element.name} </h4>
-              <p> Description: {element.description} </p>
+              <h4><strong> Category:</strong> {element.name} </h4>
+              <p><strong>Description:</strong>  {element.description} </p>
             </>
           );
         })}

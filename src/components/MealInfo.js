@@ -23,8 +23,8 @@ function MealInfo({ day }) {
       {ShowMeal()}
       <ul>
         <h3>Nutrients</h3>
-        <li>Calories: {nutrients.calories}</li>
-        <li>Proteins: {nutrients.protein}</li>
+        <li>Calories: {nutrients.calories} </li>
+        <li>Proteins: {nutrients.protein} gr</li>
       </ul>
     </div>
   );
