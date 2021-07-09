@@ -74,7 +74,7 @@ function App() {
           exact
           path="/"
           render={(props) => (
-            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} homeRef={homeRef} offSetY={offSetY}/>
+            <Home aboutRef={aboutRef} teamRef={teamRef} {...props} homeRef={homeRef} offSetY={offSetY}/>  //Rendering scroll 
           )}
         ></Route>
         <Route

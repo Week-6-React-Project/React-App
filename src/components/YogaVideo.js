@@ -28,13 +28,13 @@ console.log(name)
 
    // https://iron-cors-anywhere.herokuapp.com
     if(name){
-      console.log("Find video with name", name)
+      //console.log("Find video with name", name)
       let res = await axios.get(
             `https://www.googleapis.com/youtube/v3/search?part=snippet&q=how+to+do+${name}+yoga+pose&m[…]Search=moderate&key=AIzaSyBibnOWEr72nhfg0dEPgv5Amv09pXcRk_M`
         
             
           );
-          console.log(res)
+          //console.log(res)
           setYogaVideo(res.data.items[0])
     }
 
