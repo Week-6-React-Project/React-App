@@ -75,7 +75,7 @@ function App() {
               {...props}
               homeRef={homeRef}
               offSetY={offSetY}
-            />
+            /> //Rendering scroll
           )}
         ></Route>
         <Route
