@@ -3,12 +3,12 @@ import MealDetails from "./MealDetails";
 import "./MealInfo.css";
 
 function MealInfo({ day }) {
-  console.log(day);
+  // console.log(day);
   const { meals, nutrients } = day;
 
   const ShowMeal = () => {
     return meals.map((eachMeal) => {
-      console.log(eachMeal);
+      // console.log(eachMeal);
       return (
         <div>
           <h3>{eachMeal.title}</h3>
