@@ -8,7 +8,7 @@ function YogaVideo({name}) {
 
   const [yogaVideo, setYogaVideo] = useState(null);
 
-console.log(name)
+//console.log(name)
 
 
 // const videoFromYoutube = async() => {
