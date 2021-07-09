@@ -8,8 +8,7 @@ function MealPlan({ aboutRef, teamRe, homeRef }) {
   const [mealData, setMealData] = useState(null);
   const [toggle, setToggle] = useState(false);
 
-console.log(homeRef)
-
+  // console.log(homeRef)
 
   const HandleChange = (e) => {
     setCalories(e.target.value);
@@ -26,21 +25,18 @@ console.log(homeRef)
 
   const ShowData = () => {
     // console.log(mealData);
-    if(mealData){
-         return Object.keys(mealData?.week).map((key) => {
-      return (
-        <div className="daily-plan">
-          <h2>{key}</h2>
-          <MealInfo day={mealData?.week[key]} />
-        </div>
-      );
-    });
-    }else{
-      return (
-        <p>Loading ...</p>
-      )
+    if (mealData) {
+      return Object.keys(mealData?.week).map((key) => {
+        return (
+          <div className="daily-plan">
+            <h2>{key}</h2>
+            <MealInfo day={mealData?.week[key]} />
+          </div>
+        );
+      });
+    } else {
+      return <p>Loading ...</p>;
     }
- 
   };
 
   useEffect(() => {

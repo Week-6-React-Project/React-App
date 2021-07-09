@@ -6,7 +6,7 @@ function Instructions({ id }) {
   const [recipeDetails, setRecipeDetails] = useState({});
 
   const searchByIngredient = async () => {
-    console.log("click");
+    // console.log("click");
     let res = await axios.get(
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=c40a678376e24366886a26ba00de5aab`
     );
