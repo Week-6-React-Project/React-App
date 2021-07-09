@@ -38,7 +38,7 @@ function YogaDetails({id}) {
             </>
           );
         })}
-        {/* <YogaVideo name={yogaDetails.english_name} /> */}
+        <YogaVideo name={yogaDetails.english_name} />
         </>
     
       || <h1>Select a yoga pose</h1>
