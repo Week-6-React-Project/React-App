@@ -65,12 +65,12 @@ function About({ aboutRef, handleScrollUp, offSetY }) {
           in these areas.
         </p>{" "}
         <div className="about-bottom-image">
-         <h3>
-         ”Your body exists in the past and your mind exists in the future. In yoga, they come together in the present.” 
-         <br/>― B.K.S.Iyengar<br/>
-         </h3>
-
-
+          <h2>
+            ”Your body exists in the past and your mind exists in the future. In
+            yoga, they come together in the present.”
+            <br />― B.K.S.Iyengar
+            <br />
+          </h2>
         </div>
       </section>
     </div>

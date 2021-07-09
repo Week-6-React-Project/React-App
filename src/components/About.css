@@ -67,6 +67,12 @@ p {
   /* top: -300px; */
 }
 
+h2 {
+  color: rgb(53, 90, 92);
+  text-align: center;
+  padding-top: 230px;
+}
+
 @media (max-width: 1000px) {
   .about-bottom-image {
     height: 40vh;
