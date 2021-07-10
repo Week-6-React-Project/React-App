@@ -8,20 +8,7 @@ import "./Home.css";
 function Home({ aboutRef, teamRef, homeRef, offSetY }) {
   const [randomQuote, setRandomQuote] = useState({});
   
-//  const [offSetY, setOffSetY] = useState(0);
 
-//  const handleScrollUp = () => {
-//      setOffSetY(window.pageYOffset);
-//  };
-
-
-//PARALAX HOME SCREEN
-//  useEffect( () => {
-//   window.addEventListener("scroll", handleScrollUp)
-//   return() => window.removeEventListener("scroll", handleScrollUp)
-  
-
-// }, []);
 
   useEffect(async () => {
     let res = await axios.get(`https://type.fit/api/quotes`);
@@ -30,7 +17,7 @@ function Home({ aboutRef, teamRef, homeRef, offSetY }) {
    setRandomQuote(quote);
    
     setInterval(() => {
-   let quote = res.data[Math.floor(Math.random() * res.data?.length)+1];
+   let quote = res.data[Math.floor(Math.random() * res.data?.length)+1]; // Random quote 12 seconds interval
    setRandomQuote(quote);
     }, 12000)
   }, []);
